@@ -96,22 +96,27 @@ for (i in 1:dim(taxonomy)[1]) {
      OTU_genus = 'unclassified'
   }
 
-  if (OTU_genus == 'unclassified') {
-    if (OTU_family != 'unclassified') {
+  if (length(grep('unclassified', OTU_genus)) != 0) {
+  #if (OTU_genus == 'unclassified') {
+    if (length(grep('unclassified', OTU_family)) == 0) {
+    #if (OTU_family != 'unclassified') {
       taxonomy[[i]][6] <- paste('Family', OTU_family, sep=".")
     }
     else {
-      if (OTU_order != 'unclassified') {
+      if (length(grep('unclassified', OTU_order)) == 0) {
+      #if (OTU_order != 'unclassified') {
         taxonomy[[i]][6] <- paste('Order', OTU_order, sep=".")
         taxonomy[[i]][5] <- paste('Order', OTU_order, sep=".")
       } else {
-        if (OTU_class != 'unclassified') {
+        if (length(grep('unclassified', OTU_class)) == 0) {
+        #if (OTU_class != 'unclassified') {
           taxonomy[[i]][6] <- paste('Class', OTU_class, sep=".")
           taxonomy[[i]][5] <- paste('Class', OTU_class, sep=".")
           taxonomy[[i]][4] <- paste('Class', OTU_class, sep=".")
         }
         else {
-          if (OTU_phylum != 'unclassified') {
+          if (length(grep('unclassified', OTU_phylum)) == 0) {
+          #if (OTU_phylum != 'unclassified') {
             taxonomy[[i]][6] <- paste('Phylum', OTU_phylum, sep=".")
             taxonomy[[i]][5] <- paste('Phylum', OTU_phylum, sep=".")
             taxonomy[[i]][4] <- paste('Phylum', OTU_phylum, sep=".")
