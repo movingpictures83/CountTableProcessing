@@ -3,18 +3,18 @@ rm(list=ls(all=TRUE))
 
 require(stringr)
 
-tmp <- getwd()
-setwd("/usr/local/bin/plugins/CountTableProcessing/")
-dyn.load("plyr/src/loop_apply.so")
-source("plyr/R/loop-apply.r")
-source("plyr/R/progress.r")
-source("plyr/R/llply.r")
-source("plyr/R/indexed-array.r")
-source("plyr/R/utils.r")
-source("plyr/R/dimensions.r")
-source("plyr/R/split-array.r")
-source("plyr/R/alply.r")
-setwd(tmp)
+#tmp <- getwd()
+#setwd("/usr/local/bin/plugins/CountTableProcessing/")
+#dyn.load("plyr/src/loop_apply.so")
+#source("plyr/R/loop-apply.r")
+#source("plyr/R/progress.r")
+#source("plyr/R/llply.r")
+#source("plyr/R/indexed-array.r")
+#source("plyr/R/utils.r")
+#source("plyr/R/dimensions.r")
+#source("plyr/R/split-array.r")
+#source("plyr/R/alply.r")
+#setwd(tmp)
 #print(getwd())
 
 colsplit <- function(string, pattern, names) {
@@ -43,7 +43,7 @@ input <- function(inputfile) {
    tmp2 <- input2[2]
    input2 <<- input2[4:ncol(input2)]
    rownames(input2) <<- t(tmp2)
-   otu_names <<- read.table(paste(inputfile, ".0.03.cons.taxonomy", sep=""), header=TRUE, sep="\t")
+   otu_names <<- read.table(paste(inputfile, ".taxonomy", sep=""), header=TRUE, sep="\t")
    otu_names <<- otu_names[,3]
 }
 
