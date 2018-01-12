@@ -3,25 +3,8 @@ rm(list=ls(all=TRUE))
 
 require(stringr)
 
-#tmp <- getwd()
-#setwd("/usr/local/bin/plugins/CountTableProcessing/")
-#dyn.load("plyr/src/loop_apply.so")
-#source("plyr/R/loop-apply.r")
-#source("plyr/R/progress.r")
-#source("plyr/R/llply.r")
-#source("plyr/R/indexed-array.r")
-#source("plyr/R/utils.r")
-#source("plyr/R/dimensions.r")
-#source("plyr/R/split-array.r")
-#source("plyr/R/alply.r")
-#setwd(tmp)
-#print(getwd())
 
 colsplit <- function(string, pattern, names) {
-  #vars <- str_split_fixed(string, pattern, n = length(names))
-  #
-  #df <- data.frame(alply(vars, 2, type.convert, as.is = TRUE),
-  #  stringsAsFactors = FALSE)
   m <- length(string) 
   n = length(names)
  
