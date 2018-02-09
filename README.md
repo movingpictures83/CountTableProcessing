@@ -3,6 +3,7 @@
 # Dependency: Requires plyr
 # Input: prefix (for abundances and OTUs produced by Mothur)
 # Output: CSV (abundance matrix)
+# Tested with: PluMA 1.0, R 3.2.5
 
 PluMA plugin to convert OTU count output using Mothur (Schloss et al, 2009) formats 
 into a CSV file of abundances.
