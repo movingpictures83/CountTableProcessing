@@ -1,0 +1,2 @@
+Prefix plugins/CountTableProcessing/example/
+Plugin CountTableProcessing inputfile Early outputfile Early.abund.csv
