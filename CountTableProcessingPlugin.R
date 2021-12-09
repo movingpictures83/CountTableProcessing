@@ -1,13 +1,14 @@
 # Clear R workspace
 rm(list=ls(all=TRUE))
 
+if(!(require(stringr))) install.packages('stringr')
+
 require(stringr)
 
-
 colsplit <- function(string, pattern, names) {
-  m <- length(string) 
+  m <- length(string)
   n = length(names)
- 
+
   df = vector("list", m)
   for (i in 1:m) {
      vars <- strsplit(toString(string[i]), pattern)
@@ -15,7 +16,7 @@ colsplit <- function(string, pattern, names) {
      dim(df[[i]]) <- n
      names(df[[i]]) <- names
   }
-  dim(df) <- m  
+  dim(df) <- m
 
   df
 }
@@ -42,7 +43,7 @@ m <- dim(taxonomy)
 n <- dim(taxonomy[[1]])
 for (i in 1:m) {
    for (j in 1:n) {
-      taxonomy[[i]][j] <- mysub(taxonomy[[i]][j]) 
+      taxonomy[[i]][j] <- mysub(taxonomy[[i]][j])
    }
 }
 
@@ -56,7 +57,7 @@ for (i in 1:dim(taxonomy)[1]) {
   n <- length(taxa)
   OTU_kingdom = taxa[1]
   if (is.na(OTU_kingdom)) {
-     OTU_kingdom = 'unclassified' 
+     OTU_kingdom = 'unclassified'
   }
   OTU_phylum = taxa[2]
   if (is.na(OTU_phylum)) {
